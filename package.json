@@ -1,0 +1,23 @@
+{
+  "name": "Nodejs api template",
+  "version": "1.0.0",
+  "description": "A simple nodejs api template using nodejs express and mongoose",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "blog",
+    "email",
+    "mongodb",
+    "backend",
+    "api"
+  ],
+  "author": "amosspark",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12"
+  }
+}
