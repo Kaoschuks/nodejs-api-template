@@ -1,0 +1,7 @@
+class userModel {
+
+}
+
+class institutionModel {
+    
+}
