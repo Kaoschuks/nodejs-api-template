@@ -1,9 +1,9 @@
 import { FastifyPluginAsync, FastifyInstance, FastifyPluginOptions } from "fastify";
-import { posts } from "../controllers/base_control";
 import fp from 'fastify-plugin';
+import { baseController } from "../controllers";
 
 
-const PostRoute: FastifyPluginAsync = async (router: FastifyInstance | any, options: FastifyPluginOptions) => {
+export const BaseRoute: FastifyPluginAsync = async (router: FastifyInstance | any, options: FastifyPluginOptions) => {
 
   router.decorate("secure", async (request: any, reply: any) => {
     try {
@@ -13,7 +13,7 @@ const PostRoute: FastifyPluginAsync = async (router: FastifyInstance | any, opti
     }
   });
 
-  router.get("/posts", { onRequest: [router.secure] }, posts.get_all);
+  router.get("/base", { onRequest: [router.secure] }, baseController.get_all);
   // // postRouter.get("/", postController.get_all_posts);
   // // postRouter.get("/:id", postController.get_posts);
   // // postRouter.post("/", postController.save_post);
@@ -21,4 +21,4 @@ const PostRoute: FastifyPluginAsync = async (router: FastifyInstance | any, opti
   // // postRouter.delete("/:id", postController.delete_post);
 };
 
-export default fp(PostRoute);
+export default fp(BaseRoute);

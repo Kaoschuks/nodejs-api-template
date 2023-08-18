@@ -6,7 +6,7 @@ import helmet from "@fastify/helmet";
 import fastifyCaching from "@fastify/caching";
 
 export const app: FastifyInstance = fastify({
-    logger: true
+  logger: true
 })
 
 export const _secure_headers = async () => {

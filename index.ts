@@ -1,18 +1,12 @@
+import { app, _secure_headers, _optimise, port, database } from "./app/core";
+import { BaseRoute } from "./app/modules";
 
-import { app, port, _optimise, _secure_headers } from "./src/models/config/config";
-import PostRoute from "./src/views/base_router";
-
-// routes
-app.get("/", async (request, response) => {
-  return {
-    "message": "hello world"
-  }
-});
-app.register(PostRoute);
+app.register(BaseRoute);
 
 const start = async () => {
     try {
         await Promise.all([
+            await database.sync(),
             await _secure_headers(),
             await _optimise()
         ])

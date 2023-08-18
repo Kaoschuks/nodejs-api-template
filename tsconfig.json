@@ -102,7 +102,7 @@
   },
   "include": [
     "**/*.ts"
-, "src/views/posts_router.js", "src/controllers/posts_control.js"  ],
+, "app/views/posts_router.js", "app/controllers/posts_control.js"  ],
   "exclude": [
     "node_modules", 
     "**/*.d.ts",
